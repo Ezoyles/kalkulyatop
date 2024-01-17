@@ -1,10 +1,4 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-import java.util.HashMap;
 import java.util.Scanner;
-import java.util.TreeMap;
-import java.util.random.RandomGenerator;
-
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
@@ -32,9 +26,6 @@ public class Main {
             boolean isRoman = converter.isRoman(data[0]);
             if (isRoman) {
                 //если римские, то конвертируем их в арабские
-                //X+V
-                //x-10
-                //v - 5
                 a = converter.romanToInt(data[0]);
                 if (a > 10 || a < 1) {
                     throw new Exception("На входе обнаружено число >10");
@@ -55,7 +46,6 @@ public class Main {
                     throw new Exception("На входе обнаружено число >10");
                 }
             }
-            //выполняем с числами арифметическое действие
             int result;
             switch (actions[index]) {
                 case "+":
@@ -71,7 +61,6 @@ public class Main {
                     result = a / b;
                     break;
             }
-            //15->XV
             if (isRoman) {
                 //если числа были римские, возвращаем результат в римском числе
                 return (converter.intToRoman(result));
