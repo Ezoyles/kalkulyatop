@@ -20,6 +20,9 @@ public class Main {
         }
         String[] data = input.split(regexActions[index]);
         Converter converter = new Converter();
+        if (data.length > 2){
+            throw new Exception("Error");
+        }
         if(converter.isRoman(data[0]) == converter.isRoman(data[1])) {
             int a, b;
             //Определяем, римские ли это числа
